@@ -1,33 +1,45 @@
-let num1 = getElementById("num1");
-let num2 = getElementById("num2");
-let sub = getElementById("sub");
-let sum;
-    switch (sub) {
-        case "+":
-            sum = $num1 + $num2;
-            
-            break;
-
-        case "-":
-            sum = num1 - num2;
-            
-            break;
-
-        case "*":
-            sum = num1 * num2;
-            
-            break;
-
-        case "/":
-            if (num2 == 0) {
-                alert("Error: Division by zero");
-                break;
-            }
-            sum =$num1 / num2;
-            
-            break;
-
-        default:
-            echo "Operator not set";
-            break;
+// функций за калкулация
+function add(num1, num2) {
+    return num1 + num2;
+  }
+  
+  function subtract(num1, num2) {
+    return num1 - num2;
+  }
+  
+  function multiply(num1, num2) {
+    return num1 * num2;
+  }
+  
+  function divide(num1, num2) {
+    return num1 / num2;
+  }
+  
+//Главна калкулация
+  function handleCalculation(event) {
+    event.preventDefault();
+    const number1 = parseInt(document.querySelector("input#num1").value);
+    const number2 = parseInt(document.querySelector("input#num2").value);
+    const operator = document.querySelector("input[name='operator']:checked").value;
+  
+    let result;
+    if (operator === "+") {
+      result = add(number1, number2);
+    } else if (operator === "-") {
+      result = subtract(number1, number2);
+    } else if (operator === "*") {
+      result = multiply(number1, number2);
+    } else if (operator === "/") {
+      result = divide(number1, number2);
     }
+  
+    document.getElementById("sum").innerText = result;
+  }
+  
+  //Извеждане на решението
+  window.addEventListener("load", function() {
+    const form = document.getElementById("calculator");
+    form.addEventListener("submit", handleCalculation);
+  });
+
+  

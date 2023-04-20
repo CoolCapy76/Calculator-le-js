@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-<title>Page Title</title>
-<script type="calc/script.js"></script>
+  <title>Calculator</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Калкулатур</h1>
+  <form id="calculator">
+    <div class="form">
+    <label>Първо число:</label><br>
+    <input id="num1" type="number"><br>
+    <label>Второ число:</label><br>
+    <input id="num2" type="number"><br>
 
-<form>
+    
+    <label>
+      <input type="radio" name="operator" value="+">
+      Плус
+    </label><br>
+    <label>
+      <input type="radio" name="operator" value="-">
+      Минус
+    </label><br>
+    <label>
+      <input type="radio" name="operator" value="*">
+      Умножение
+    </label><br>
+    <label>
+      <input type="radio" name="operator" value="/">
+      Деление
+    </label><br></div>
 
-    <label for="num1">Първо Число:</label>
-    <input type="number" id="num1" name="num1"><br><br>
+    <button type="submit" class="btn">Сметни</button><br>
+    </div>
+  </form>
 
-    <label for="num2">Второ Число:</label>
-    <input type="number" id="num2" name="num2"><br><br>
-
-
-    <label>Операция:</label><br>
-
-
-    <label>Плус -</label>
-    <input type="radio" name="sub" value="+"><br>
-
-
-    <label>Минус -</label>
-    <input type="radio" name="sub" value="-"><br>
-
-    <label>Умножение -</label>
-    <input type="radio" name="sub" value="*"><br>
-
-    <label>Деление -</label>
-    <input type="radio" name="sub" value="/"><br>
-
-    <button class="submit" type="submit">Сметни</button><br>
-
-    <textarea id="sum"></textarea>
-
-</form>
+  <h2>Резултат</h2>
+  <p id="sum"></p>
+  </div>
 </body>
 </html>
